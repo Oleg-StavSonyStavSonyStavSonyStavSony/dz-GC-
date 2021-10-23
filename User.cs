@@ -2,7 +2,7 @@ using System;
 
 namespace dz_GC_
 {
-    public class User : IDisposable{
+    public class User {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
@@ -15,9 +15,6 @@ namespace dz_GC_
         }
         public override string ToString(){
             return $"{FirstName}-{LastName}-{MiddleName}";
-        }
-        public  void Dispose(){
-            GC.Collect(GC.GetGeneration(this));
         }
         
     }
