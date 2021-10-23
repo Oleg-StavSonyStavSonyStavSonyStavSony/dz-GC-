@@ -3,18 +3,13 @@ using System.Collections.Generic;
 
 namespace dz_GC_
 {
-    public class Listt : IDisposable{
-        public List<User> listUser;
+    public class Listt : List<User>,IDisposable{
         public Listt(){
-            listUser = new List<User>();
+           // base = new List<User>();
         }
         public void ADD(User user){
-            listUser.Add(user);
-
+            base.Add(user);
         }
-
-
-
          public  void Dispose(){
             GC.Collect(GC.GetGeneration(this));
         }
